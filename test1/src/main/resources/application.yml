@@ -1,0 +1,22 @@
+server:
+  port: 9091
+
+spring:
+  application:
+    name: test1
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+    nacos:
+      enabled: true
+      discovery:
+        server-addr: localhost:8848
+        namespace: Acmsdy
+    sentinel:
+      transport:
+        dashboard: localhost:8080 #配置Sentinel dashboard地址
+feign:
+ sentinel:
+  enabled: true
+

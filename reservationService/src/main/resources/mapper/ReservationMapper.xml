@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.ReservationMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.demo.entity.domain.Reservation">
+            <id property="reservationId" column="reservation_id" jdbcType="VARCHAR"/>
+            <result property="roomId" column="room_id" jdbcType="VARCHAR"/>
+            <result property="doctorId" column="doctor_id" jdbcType="VARCHAR"/>
+            <result property="money" column="money" jdbcType="DECIMAL"/>
+            <result property="numberSourceId" column="number_source_id" jdbcType="VARCHAR"/>
+            <result property="state" column="state" jdbcType="INTEGER"/>
+            <result property="timeId" column="time_id" jdbcType="VARCHAR"/>
+            <result property="patientId" column="patient_id" jdbcType="VARCHAR"/>
+            <result property="payState" column="pay_state" jdbcType="INTEGER"/>
+            <result property="reservationTime" column="reservation_time" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        reservation_id,room_id,doctor_id,
+        money,number_source_id,state,
+        time_id,patient_id,pay_state,
+        reservation_time
+    </sql>
+</mapper>
