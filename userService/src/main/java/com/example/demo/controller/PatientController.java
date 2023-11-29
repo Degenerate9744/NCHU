@@ -1,8 +1,12 @@
 package com.example.demo.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.demo.common.bean.PageBean;
+import com.example.demo.converter.trans.PatientTrans;
 import com.example.demo.entity.domain.Patient;
 import com.example.demo.entity.query.PatientQuery;
+import com.example.demo.entity.vo.NurseVO;
+import com.example.demo.entity.vo.PatientVO;
 import com.example.demo.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -23,13 +27,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class PatientController {
     @Autowired
     private PatientService patientService;
-
+    @Autowired
+    private PatientTrans patientTrans;
 
     @ResponseBody
     @RequestMapping("/list")
-    public Page<Patient> list(PatientQuery patientQuery){
+    public PageBean<PatientVO> list(PatientQuery patientQuery){
         Page<Patient> patientPage = patientService.selectPage(patientQuery);
-        return patientPage;
+        PageBean<PatientVO> patientVOPageBean = patientTrans.getInstance().tPage2VPageBean(patientPage);
+        return patientVOPageBean;
     }
     @ResponseBody
     @RequestMapping("/insert")

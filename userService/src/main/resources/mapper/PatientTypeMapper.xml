@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.PatientTypeMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.demo.entity.domain.PatientType">
+            <id property="patientTypeId" column="patient_type_id" jdbcType="VARCHAR"/>
+            <result property="patientTypeName" column="patient_type_name" jdbcType="VARCHAR"/>
+            <result property="reductionTime" column="reduction_time" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        patient_type_id,patient_type_name,reduction_time
+    </sql>
+</mapper>
