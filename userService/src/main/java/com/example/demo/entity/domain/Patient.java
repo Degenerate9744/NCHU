@@ -13,7 +13,8 @@ import lombok.*;
  * @TableName tb_patient
  */
 @TableName(value ="tb_patient")
-@Data
+@Setter
+@Getter
 public class Patient implements Serializable {
     /**
      * 

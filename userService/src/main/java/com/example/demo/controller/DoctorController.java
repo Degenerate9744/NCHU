@@ -32,7 +32,6 @@ public class DoctorController {
     @ResponseBody
     @RequestMapping("/list")
     public PageBean<DoctorVO> list(DoctorQuery doctorQuery){
-        doctorQuery.setState(0);
         Page<Doctor> doctorPage = doctorService.selectPage(doctorQuery);
         PageBean<DoctorVO> doctorVOPageBean = doctorTrans.getInstance().tPage2VPageBean(doctorPage);
         return doctorVOPageBean;

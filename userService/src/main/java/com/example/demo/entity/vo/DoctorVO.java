@@ -3,6 +3,8 @@ package com.example.demo.entity.vo;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @ClassName：DactorVO
@@ -10,7 +12,8 @@ import lombok.Data;
  * @Date：2023-11-29 8:51
  * @Describe：
  */
-@Data
+@Getter
+@Setter
 public class DoctorVO {
     @TableId(value = "doctor_id")
     private String doctorId;

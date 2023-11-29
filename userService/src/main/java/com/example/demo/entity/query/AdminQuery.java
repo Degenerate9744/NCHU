@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.example.demo.common.base.BaseQuery;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @ClassName：AdminQuery
@@ -11,7 +13,8 @@ import lombok.Data;
  * @Date：2023-11-28 14:55
  * @Describe：
  */
-@Data
+@Getter
+@Setter
 public class AdminQuery extends BaseQuery {
     @TableId(value = "admin_id")
     private String adminId;

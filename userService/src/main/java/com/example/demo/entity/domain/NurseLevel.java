@@ -11,35 +11,23 @@ import lombok.Setter;
 
 /**
  * 
- * @TableName tb_admin
+ * @TableName tb_nurse_level
  */
-@TableName(value ="tb_admin")
+@TableName(value ="tb_nurse_level")
 @Getter
 @Setter
-public class Admin implements Serializable {
+public class NurseLevel implements Serializable {
     /**
      * 
      */
-    @TableId(value = "admin_id")
-    private String adminId;
+    @TableId(value = "nurse_level_id")
+    private String nurseLevelId;
 
     /**
      * 
      */
-    @TableField(value = "admin_name")
-    private String adminName;
-
-    /**
-     * 
-     */
-    @TableField(value = "phone_number")
-    private String phoneNumber;
-
-    /**
-     * 
-     */
-    @TableField(value = "state")
-    private Integer state;
+    @TableField(value = "nurse_level_name")
+    private String nurseLevelName;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

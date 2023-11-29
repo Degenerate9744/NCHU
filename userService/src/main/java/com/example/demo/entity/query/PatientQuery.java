@@ -12,7 +12,8 @@ import lombok.*;
  * @Date：2023-11-27 14:35
  * @Describe：
  */
-@Data
+@Getter
+@Setter
 public class PatientQuery extends BaseQuery {
     /**
      *
