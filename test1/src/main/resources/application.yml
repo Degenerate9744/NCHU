@@ -13,10 +13,24 @@ spring:
       discovery:
         server-addr: localhost:8848
         namespace: Acmsdy
+    gateway:
+      discovery:
+          locator:
+            enabled: true
     sentinel:
       transport:
         dashboard: localhost:8080 #配置Sentinel dashboard地址
+  main:
+    web-application-type: reactive
 feign:
  sentinel:
   enabled: true
+gateway:
+  routes:
+    config:
+      data-id: gateway-routes  #动态路由
+      group: hospital
+      namespace: Acmsdy
+
+
 
