@@ -45,4 +45,9 @@ public class AdminController {
     public boolean update(Admin admin){
         return adminService.updateById(admin);
     }
+    @ResponseBody
+    @RequestMapping("/feignTest")
+    public String feignTest(){
+        return "test ok";
+    }
 }

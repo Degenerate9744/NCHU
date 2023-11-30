@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @Describe：
  */
 //@Service
-@FeignClient(value = "service123" ,fallback = Service1FeignHandler.class)
-@LoadBalancerClient("service123")
+@FeignClient(value = "userService" ,fallback = Service1FeignHandler.class)
+@LoadBalancerClient("userService")
 public interface Service1Feign {
-    @RequestMapping("/service/feignTest")
+    @RequestMapping("/admin/feignTest")
     String feignTest();
 }
