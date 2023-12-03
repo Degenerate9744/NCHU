@@ -11,8 +11,8 @@
             <result property="phoneNumber" column="phone_number" jdbcType="VARCHAR"/>
             <result property="introduction" column="introduction" jdbcType="VARCHAR"/>
             <result property="state" column="state" jdbcType="INTEGER"/>
-            <result property="dutyRoom" column="duty_room" jdbcType="VARCHAR"/>
-            <result property="baceNumberSourceAmount" column="bace_number_source_amount" jdbcType="INTEGER"/>
+            <result property="roomId" column="room_id" jdbcType="VARCHAR"/>
+            <result property="baseNumberSourceAmount" column="base_number_source_amount" jdbcType="INTEGER"/>
             <result property="addNumberSourceAmount" column="add_number_source_amount" jdbcType="INTEGER"/>
             <result property="residueNumberSourceAmount" column="residue_number_source_amount" jdbcType="INTEGER"/>
     </resultMap>
@@ -20,7 +20,7 @@
     <sql id="Base_Column_List">
         doctor_id,doctor_name,doctor_level_id,
         phone_number,introduction,state,
-        duty_room,bace_number_source_amount,add_number_source_amount,
+        room_id,base_number_source_amount,add_number_source_amount,
         residue_number_source_amount
     </sql>
 </mapper>
