@@ -50,7 +50,7 @@ public class ReservationController {
     @ResponseBody
     @RequestMapping("/insert")
     public boolean insert(Reservation reservation){
-        if (conflictDetection(reservation)) {
+        if (reservationService.conflictDetection(reservation)) {
             return reservationService.save(reservation);
         }
         return false;
@@ -64,19 +64,5 @@ public class ReservationController {
     @RequestMapping("/update")
     public boolean update(Reservation reservation){
         return reservationService.updateById(reservation);
-    }
-
-
-    public boolean conflictDetection(Reservation reservation){
-        ReservationQuery reservationQuery = new ReservationQuery();
-        reservationQuery.setPatientId(reservation.getPatientId());
-        reservationQuery.setReservationTime(reservation.getReservationTime());
-        reservationQuery.setTimeId(reservation.getTimeId());
-        reservationQuery.setState(reservation.getState());
-        int size = reservationService.selectPage(reservationQuery).getRecords().size();
-        if(size>0){
-            return false;//发生冲突
-        }
-        return true;
     }
 }

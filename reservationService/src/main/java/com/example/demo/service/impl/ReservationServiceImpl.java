@@ -32,6 +32,19 @@ public class ReservationServiceImpl extends ServiceImpl<ReservationMapper, Reser
         Page<Reservation> reservationPage = reservationMapper.selectPage(page, queryWrapper);
         return reservationPage;
     }
+    @Override
+    public boolean conflictDetection(Reservation reservation){
+        ReservationQuery reservationQuery = new ReservationQuery();
+        reservationQuery.setPatientId(reservation.getPatientId());
+        reservationQuery.setReservationTime(reservation.getReservationTime());
+        reservationQuery.setTimeId(reservation.getTimeId());
+        reservationQuery.setState(reservation.getState());
+        int size = selectPage(reservationQuery).getRecords().size();
+        if(size>0){
+            return false;//发生冲突
+        }
+        return true;
+    }
 }
 
 

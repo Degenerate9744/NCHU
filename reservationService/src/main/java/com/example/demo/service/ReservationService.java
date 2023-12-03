@@ -12,4 +12,5 @@ import com.example.demo.entity.query.ReservationQuery;
 */
 public interface ReservationService extends IService<Reservation> {
     public Page<Reservation> selectPage(ReservationQuery reservationQuery);
+    public boolean conflictDetection(Reservation reservation);
 }
