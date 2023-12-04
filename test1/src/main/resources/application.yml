@@ -17,6 +17,15 @@ spring:
       discovery:
           locator:
             enabled: false
+      globalcors:
+        cors-configurations:
+          '[/**]': # 匹配所有请求
+            allowedOrigins: "*" # 跨域处理 允许所有的域
+            allowedMethods: # 支持的方法
+              - GET
+              - POST
+              - PUT
+              - DELETE
     sentinel:
       transport:
         dashboard: localhost:8080 #配置Sentinel dashboard地址
