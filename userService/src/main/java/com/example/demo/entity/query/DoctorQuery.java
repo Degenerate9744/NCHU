@@ -6,6 +6,7 @@ import com.example.demo.common.base.BaseQuery;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  * @ClassName：StaffQuery
@@ -15,6 +16,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
+@ToString
 public class DoctorQuery extends BaseQuery {
     /*医生查询条件*/
     /**
@@ -23,11 +25,20 @@ public class DoctorQuery extends BaseQuery {
     @TableId(value = "doctor_id")
     private String doctorId;
 
+    @TableField(value = "doctor_name")
+    private String doctorName;
+
     /**
      * 职称id
      */
     @TableField(value = "doctor_level_id")
     private String doctorLevelId;
+
+    /**
+     *
+     */
+    @TableField(value = "doctor_level_name")
+    private String doctorLevelName;
 
     /**
      *
