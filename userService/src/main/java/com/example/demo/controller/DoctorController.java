@@ -39,8 +39,6 @@ public class DoctorController {
     @ResponseBody
     @RequestMapping("/list")
     public PageBean<DoctorVO> list(DoctorQuery doctorQuery){
-        System.out.println("-------------------------------------------------------");
-        System.out.println(doctorQuery.toString());
         if (doctorQuery.getDoctorLevelName()!=null){
             QueryWrapper<DoctorLevel> queryWrapper = new QueryWrapper<>();
             queryWrapper.like("doctor_level_name", doctorQuery.getDoctorLevelName());

@@ -14,13 +14,18 @@ import lombok.*;
  */
 @Getter
 @Setter
+@ToString
 public class PatientQuery extends BaseQuery {
     /**
      *
      */
     @TableId(value = "patient_id")
     private String patientId;
-
+    /**
+     *
+     */
+    @TableField(value = "patient_name")
+    private String patientName;
     /**
      *
      */
