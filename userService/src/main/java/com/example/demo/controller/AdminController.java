@@ -25,6 +25,11 @@ public class AdminController {
     private AdminService adminService;
 
     @ResponseBody
+    @RequestMapping("/test")
+    public String test(){
+        return "test successful!";
+    }
+    @ResponseBody
     @RequestMapping("/list")
     public Page<Admin> list(AdminQuery adminQuery){
         Page<Admin> adminPage = adminService.selectPage(adminQuery);

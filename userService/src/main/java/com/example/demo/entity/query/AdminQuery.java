@@ -22,6 +22,12 @@ public class AdminQuery extends BaseQuery {
     /**
      *
      */
+    @TableField(value = "admin_name")
+    private String adminName;
+
+    /**
+     *
+     */
     @TableField(value = "phone_number")
     private String phoneNumber;
 

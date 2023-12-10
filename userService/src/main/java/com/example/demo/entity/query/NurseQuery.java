@@ -19,6 +19,9 @@ public class NurseQuery extends BaseQuery {
     @TableId(value = "nurse_id")
     private String nurseId;
 
+    @TableId(value = "nurse_name")
+    private String nurseName;
+
     /**
      * 护士职级
      */
