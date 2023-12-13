@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.DepartmentCategoriesMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.demo.entity.domain.DepartmentCategories">
+            <id property="departmentCategoriesId" column="department_categories_id" jdbcType="VARCHAR"/>
+            <result property="departmentCategoriesName" column="department_categories_name" jdbcType="VARCHAR"/>
+            <result property="departmentNum" column="department_num" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        department_categories_id,department_categories_name,department_num
+    </sql>
+</mapper>

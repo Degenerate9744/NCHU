@@ -12,17 +12,18 @@ import java.util.List;
  * @param <T>
  * @author hc
  */
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class PageBean<T> {
     /**
      * 每页显示的条数
      */
-    private Integer pageSize;
+    private Long size;
     /**
      * 当前的页码
      */
-    private Integer pageNum;
+    private Long current;
     /**
      * 一共有多少条记录
      */
@@ -30,14 +31,10 @@ public class PageBean<T> {
     /**
      * 一共有多少页
      */
-    private Integer pages;
+    private Long pages;
     /**
      * 每一页所显示的数据
      */
-    private List<T> result;
-    /**
-     * 分页请求路径
-     */
-    private String url;
+    private List<T> records;
 
 }

@@ -17,18 +17,18 @@
 package com.example.demo.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.demo.common.bean.PageBean;
+import com.example.demo.converter.trans.ReservationTrans;
 import com.example.demo.entity.domain.Reservation;
 import com.example.demo.entity.query.ReservationQuery;
-import com.example.demo.feign.Service1Feign;
+import com.example.demo.entity.vo.ReservationVO;
+import com.example.demo.service.PayMethodService;
 import com.example.demo.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.List;
 
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
@@ -39,13 +39,18 @@ import java.util.List;
 @RequestMapping("/reservation")
 public class ReservationController {
     @Autowired
+    private ReservationTrans reservationTrans;
+    @Autowired
     private ReservationService reservationService;
+    @Autowired
+    private PayMethodService payMethodService;
 
     @ResponseBody
     @RequestMapping("/list")
-    public Page<Reservation> list(ReservationQuery reservationQuery){
+    public PageBean<ReservationVO> list(ReservationQuery reservationQuery){
         Page<Reservation> reservationPage = reservationService.selectPage(reservationQuery);
-        return reservationPage;
+        PageBean<ReservationVO> reservationVOPageBean = reservationTrans.getInstance().tPage2VPageBean(reservationPage);
+        return reservationVOPageBean;
     }
     @ResponseBody
     @RequestMapping("/insert")
@@ -64,5 +69,15 @@ public class ReservationController {
     @RequestMapping("/update")
     public boolean update(Reservation reservation){
         return reservationService.updateById(reservation);
+    }
+    @ResponseBody
+    @RequestMapping("/pay")
+    public boolean pay(String option,String reservationId){
+        boolean result = false;
+        switch (option){
+            case "AliPay":result = payMethodService.AliPay(reservationId);break;
+            case "WeChatPay":result = payMethodService.WeChatPay(reservationId);break;
+        }
+        return result;
     }
 }

@@ -58,4 +58,7 @@ public class DoctorQuery extends BaseQuery {
     @TableField(value = "room_id")
     private String roomId;
 
+    @TableField(value = "department_id")
+    private String departmentId;
+
 }

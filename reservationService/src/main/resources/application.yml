@@ -5,6 +5,9 @@ spring:
   application:
     name: reservationService
   cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
     nacos:
       discovery:
         server-addr: localhost:8848

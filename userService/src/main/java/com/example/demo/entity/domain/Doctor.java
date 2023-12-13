@@ -76,6 +76,9 @@ public class Doctor implements Serializable {
     @TableField(value = "residue_number_source_amount")
     private Integer residueNumberSourceAmount;
 
+    @TableField(value = "department_id")
+    private String departmentId;
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 }

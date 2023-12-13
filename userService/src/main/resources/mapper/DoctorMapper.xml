@@ -15,12 +15,13 @@
             <result property="baseNumberSourceAmount" column="base_number_source_amount" jdbcType="INTEGER"/>
             <result property="addNumberSourceAmount" column="add_number_source_amount" jdbcType="INTEGER"/>
             <result property="residueNumberSourceAmount" column="residue_number_source_amount" jdbcType="INTEGER"/>
+            <result property="departmentId" column="department_id" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         doctor_id,doctor_name,doctor_level_id,
         phone_number,introduction,state,
         room_id,base_number_source_amount,add_number_source_amount,
-        residue_number_source_amount
+        residue_number_source_amount,department_id
     </sql>
 </mapper>

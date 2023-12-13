@@ -52,4 +52,10 @@ public class PatientController {
     public boolean update(Patient patient){
         return patientService.updateById(patient);
     }
+    @ResponseBody
+    @RequestMapping("/select")
+    public String selectNameById(String patientId){
+        patientId = "1";
+        return patientService.getById(patientId).getPatientName();
+    }
 }

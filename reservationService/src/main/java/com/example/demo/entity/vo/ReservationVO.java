@@ -1,25 +1,23 @@
-package com.example.demo.entity.domain;
+package com.example.demo.entity.vo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
-import java.math.BigDecimal;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 /**
- * 
- * @TableName tb_reservation
+ * @ClassName：ReservationVO
+ * @Author：Acmsdy
+ * @Date：2023-12-12 8:49
+ * @Describe：
  */
-@TableName(value ="tb_reservation")
 @Getter
 @Setter
-public class Reservation implements Serializable {
+public class ReservationVO {
     /**
-     * 
+     *
      */
     @TableId(value = "reservation_id")
     private String reservationId;
@@ -31,25 +29,20 @@ public class Reservation implements Serializable {
     private String roomId;
 
     /**
-     * 
+     *
      */
-    @TableField(value = "doctor_id")
-    private String doctorId;
+    @TableField(value = "doctor_name")
+    private String doctorName;
 
     /**
-     * 
+     *
      */
     @TableField(value = "money")
     private BigDecimal money;
 
-    /**
-     * 号源序号
-     */
-    @TableField(value = "number_source_id")
-    private String numberSourceId;
 
     /**
-     * 
+     *
      */
     @TableField(value = "state")
     private Integer state;
@@ -57,17 +50,19 @@ public class Reservation implements Serializable {
     /**
      * 时段编号
      */
-    @TableField(value = "time_id")
-    private String timeId;
+    @TableField(value = "start_time")
+    private String startTime;
+    @TableField(value = "end_time")
+    private String endTime;
 
     /**
-     * 
+     *
      */
-    @TableField(value = "patient_id")
-    private String patientId;
+    @TableField(value = "patient_name")
+    private String patientName;
 
     /**
-     * 
+     *
      */
     @TableField(value = "pay_state")
     private Integer payState;
@@ -77,7 +72,4 @@ public class Reservation implements Serializable {
      */
     @TableField(value = "reservation_time")
     private String reservationTime;
-
-    @TableField(exist = false)
-    private static final long serialVersionUID = 1L;
 }

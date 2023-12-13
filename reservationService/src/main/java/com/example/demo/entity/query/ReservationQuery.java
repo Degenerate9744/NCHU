@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.example.demo.common.base.BaseQuery;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 
@@ -13,7 +15,8 @@ import java.math.BigDecimal;
  * @Date：2023-11-28 20:42
  * @Describe：
  */
-@Data
+@Getter
+@Setter
 public class ReservationQuery extends BaseQuery {
     /**
      *

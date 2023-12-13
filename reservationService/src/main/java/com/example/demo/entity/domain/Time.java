@@ -6,13 +6,16 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * 
  * @TableName tb_time
  */
 @TableName(value ="tb_time")
-@Data
+@Getter
+@Setter
 public class Time implements Serializable {
     /**
      * 

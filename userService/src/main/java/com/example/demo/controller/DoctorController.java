@@ -65,4 +65,11 @@ public class DoctorController {
     public boolean update(Doctor doctor){
         return doctorService.updateById(doctor);
     }
+
+    @ResponseBody
+    @RequestMapping("/select")
+    public String selectNameById(String doctorId){
+        doctorId = "1";
+        return doctorService.getById(doctorId).getDoctorName();
+    }
 }
